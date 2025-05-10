@@ -738,11 +738,11 @@ class RequestHandler(object):
     def run_notice(self):
         self.cmd_notice('run', descr='run')
 
-    # send a single trace command (F11) to the debugger (via the broker and dispatcher)
+    # send a single trace command (F7) to the debugger (via the broker and dispatcher)
     def si_notice(self):
         self.cmd_notice('si', descr='trace')
 
-    # send a single step command (F10) to the debugger (via the broker and dispatcher)
+    # send a single step command (F8) to the debugger (via the broker and dispatcher)
     def so_notice(self):
         self.cmd_notice('so', descr='step')
 
@@ -1008,8 +1008,8 @@ class SyncForm_t(PluginForm):
         hotkeys_info = (
             ('F2', self.broker.worker.bp_notice, 'BreakpointToggle'),
             ('F3', self.broker.worker.bp_oneshot_notice),
-            ('F10', self.broker.worker.so_notice),
-            ('F11', self.broker.worker.si_notice, 'FullScreen'),
+            ('F8', self.broker.worker.so_notice),
+            ('F7', self.broker.worker.si_notice, 'FullScreen'),
             ('Ctrl-F1', self.broker.worker.export_bp_notice, 'ExternalHelp'),
             ('Ctrl-F2', self.broker.worker.hbp_notice),
             ('Ctrl-F3', self.broker.worker.hbp_oneshot_notice),
